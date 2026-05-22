@@ -6,36 +6,77 @@
 <title>Ammar Hashim | Electronics Engineer</title>
 
 <style>
+:root{
+    --bg:#f5f7fa;
+    --text:#1f2937;
+    --card:#ffffff;
+    --dark:#0f172a;
+    --blue:#2563eb;
+}
+body.dark{
+    --bg:#0f172a;
+    --text:#e5e7eb;
+    --card:#1e293b;
+    --dark:#020617;
+}
 body{
-    font-family: Arial, sans-serif;
     margin:0;
-    background:#f5f7fa;
-    color:#222;
+    font-family:Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
 }
+nav{
+    position:sticky;
+    top:0;
+    background:var(--dark);
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+nav a, nav button{
+    color:white;
+    margin-left:18px;
+    text-decoration:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+}
 header{
-    background:#0f172a;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
     color:white;
     text-align:center;
-    padding:80px 20px;
+    padding:90px 20px;
 }
 header h1{
-    font-size:48px;
+    font-size:50px;
     margin-bottom:10px;
 }
 header p{
     font-size:20px;
 }
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 22px;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+}
 section{
-    max-width:1100px;
+    max-width:1150px;
     margin:auto;
-    padding:50px 20px;
+    padding:55px 20px;
 }
 h2{
-    color:#0f172a;
-    border-bottom:2px solid #2563eb;
+    color:var(--text);
+    border-bottom:3px solid var(--blue);
     display:inline-block;
-    padding-bottom:5px;
+    padding-bottom:6px;
 }
 .grid{
     display:grid;
@@ -43,40 +84,52 @@ h2{
     gap:22px;
 }
 .card{
-    background:white;
+    background:var(--card);
     padding:22px;
-    border-radius:12px;
-    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    border-radius:14px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+}
+.card:hover{
+    transform:translateY(-4px);
+    transition:0.3s;
 }
 .card h3{
-    color:#0f172a;
     margin-top:0;
 }
 a{
     color:#2563eb;
-    text-decoration:none;
-}
-a:hover{
-    text-decoration:underline;
 }
 footer{
-    background:#0f172a;
+    background:var(--dark);
     color:white;
     text-align:center;
-    padding:20px;
-    margin-top:40px;
+    padding:25px;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+    <strong style="color:white;">Ammar Hashim</strong>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <button onclick="toggleDark()">🌙</button>
+    </div>
+</nav>
+
 <header>
     <h1>Ammar Hashim</h1>
-    <p>Electronics Engineer | Satellite Communications | VHDL & Verilog | Signal Processing | Power Electronics</p>
+    <p>Electronics Engineer | Satellite Communications | FPGA | SDR | Signal Processing | Power Electronics</p>
+    <a class="btn" href="Ammar_Hashim_CV.pdf" target="_blank">Download CV</a>
+    <a class="btn" href="https://www.linkedin.com/in/engineer-ammar" target="_blank">LinkedIn</a>
 </header>
 
-<section>
+<section id="about">
     <h2>About Me</h2>
     <p>
         I am an Electronics Engineer with hands-on experience in satellite communications,
@@ -85,43 +138,59 @@ footer{
         using GNU Radio Companion and HackRF platforms.
     </p>
     <p>
-        I am passionate about communication systems, RF technologies, digital design,
-        power electronics, and practical engineering problem-solving. My work combines theoretical
-        understanding with project-based implementation across communication, FPGA, and electronic systems.
+        I am passionate about communication systems, RF technologies, FPGA-based digital design,
+        power electronics, and practical engineering problem-solving.
     </p>
 </section>
 
 <section>
+    <h2>Core Interests</h2>
+    <div class="grid">
+        <div class="card">Satellite Communications</div>
+        <div class="card">FPGA & Digital Design</div>
+        <div class="card">Signal Processing</div>
+        <div class="card">Power Electronics</div>
+        <div class="card">SDR & Wireless Systems</div>
+        <div class="card">Microcontroller Applications</div>
+    </div>
+</section>
+
+<section>
+    <h2>Currently Exploring</h2>
+    <div class="grid">
+        <div class="card">Future 6G Communication Architectures</div>
+        <div class="card">FPGA-Based Communication Systems</div>
+        <div class="card">RF & Satellite Network Design</div>
+        <div class="card">Power Electronics Applications</div>
+    </div>
+</section>
+
+<section id="skills">
     <h2>Skills</h2>
     <div class="grid">
         <div class="card">
             <h3>Communication Systems</h3>
-            <p>Satellite Communications, RF Systems, Wireless Communication, Signal Processing</p>
+            <p>Satellite Communications, RF Systems, SDR Systems, Signal Processing</p>
         </div>
-
         <div class="card">
             <h3>Digital Design</h3>
-            <p>VHDL, Verilog, Digital Logic Design, FPGA Concepts, Timer Peripheral Design</p>
+            <p>VHDL, Verilog, FPGA Design, Digital Logic, Timer Peripheral Design</p>
         </div>
-
         <div class="card">
             <h3>Power Electronics</h3>
-            <p>Boost Converters, Ćuk Converters, Wireless EV Charging, Energy Monitoring Systems</p>
+            <p>Power Converters, Wireless EV Charging, Energy Monitoring Systems</p>
         </div>
-
         <div class="card">
             <h3>Microcontrollers</h3>
             <p>Arduino, ATmega, Sensor Interfacing, Microcontroller-Based Projects</p>
         </div>
-
         <div class="card">
             <h3>Programming</h3>
-            <p>C, C++, MATLAB, Verilog, VHDL</p>
+            <p>C, C++, MATLAB, Simulink, VHDL, Verilog</p>
         </div>
-
         <div class="card">
-            <h3>Interpersonal & Cognitive Skills</h3>
-            <p>Problem Solving, Analytical Thinking, Team Collaboration, Communication, Technical Documentation, Adaptability</p>
+            <h3>Soft Skills</h3>
+            <p>Problem Solving, Analytical Thinking, Teamwork, Communication, Technical Documentation</p>
         </div>
     </div>
 </section>
@@ -130,100 +199,85 @@ footer{
     <h2>Software & Tools</h2>
     <div class="grid">
         <div class="card">
-            <h3>FPGA & Digital Design</h3>
-            <p>Vivado, Verilog, VHDL</p>
-        </div>
-
-        <div class="card">
             <h3>Communication & SDR</h3>
-            <p>GNU Radio Companion, SDR++, HackRF, MATLAB, Simulink</p>
+            <p>GNU Radio Companion, SDR++, HackRF, STK, MATLAB, Simulink</p>
         </div>
-
         <div class="card">
-            <h3>Electronics Simulation</h3>
-            <p>Proteus, LTspice, Atmel Studio</p>
+            <h3>FPGA & Digital Design</h3>
+            <p>Vivado, Xilinx ISE, VHDL, Verilog</p>
         </div>
-
         <div class="card">
-            <h3>Control & Programming</h3>
-            <p>PLC Control, C, C++, MATLAB</p>
+            <h3>Electronics & Simulation</h3>
+            <p>Proteus, LTspice, Atmel Studio, LabVIEW</p>
+        </div>
+        <div class="card">
+            <h3>Control & Development</h3>
+            <p>PLC Control, i-TRiLOGI, RAPTOR, C, C++</p>
         </div>
     </div>
 </section>
 
-<section>
-    <h2>Projects</h2>
+<section id="projects">
+    <h2>Projects & Research</h2>
     <div class="grid">
 
         <div class="card">
             <h3>SDR-Based Experiments for Future 6G Frequencies</h3>
-            <p>
-                Conducted SDR-based wireless communication experiments using GNU Radio Companion
-                and HackRF, including transmission and reception of text, image, and audio files
-                at higher frequency ranges.
-            </p>
+            <p>Designed SDR-based systems using HackRF One and GNU Radio Companion for transmission and reception of text, image, and audio data at higher frequency ranges.</p>
         </div>
 
         <div class="card">
             <h3>Satellite Constellation Design for Optimal Coverage</h3>
-            <p>
-                Designed satellite coverage solutions for Cardiff, Perth, and Durban across S, UHF,
-                and VHF bands, including link budget analysis and weather impact studies.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Design of an 8-Bit Configurable Timer Peripheral</h3>
-            <p>
-                Designed a configurable timer peripheral with auto-reload register functionality
-                and two operating modes: one-shot and repeat mode, using digital design principles.
-            </p>
+            <p>Designed multi-satellite constellation coverage in STK for Cardiff, Perth, and Durban across S, UHF, and VHF bands, including link budget and weather impact analysis.</p>
         </div>
 
         <div class="card">
             <h3>FPGA-Based Electrical Energy Monitoring System</h3>
-            <p>
-                Developed a Verilog-based FPGA energy monitoring system using voltage and current
-                sensors, GSM SIM900A communication, and IoT/cloud data transmission. Compared cost
-                and performance with an Arduino-Bluetooth implementation.
-            </p>
+            <p>Developed a Verilog-based FPGA energy monitoring system with physical voltage/current sensors, GSM SIM900A communication, cloud integration, and comparison with Arduino-Bluetooth setup.</p>
         </div>
 
         <div class="card">
-            <h3>Hydrogen Fuel Cell with a Boost Converter</h3>
-            <p>
-                Simulated a hydrogen fuel cell power system in Simulink, stepping voltage from 40V
-                to 70V using a boost converter. Replaced it with a Ćuk converter and compared output
-                waveform behaviour using the same R, L, and C values.
-            </p>
+            <h3>Design of an 8-Bit Configurable Timer Peripheral</h3>
+            <p>Designed a configurable timer peripheral with auto-reload register and two operating modes: one-shot and repeat mode.</p>
+        </div>
+
+        <div class="card">
+            <h3>Hydrogen Fuel Cell with Boost Converter</h3>
+            <p>Simulated a hydrogen fuel cell system in Simulink, stepping voltage from 40V to 70V and comparing Boost and Ćuk converter output waveforms.</p>
         </div>
 
         <div class="card">
             <h3>Dynamic Wireless Charging System for Electric Vehicles</h3>
-            <p>
-                Designed a 2 kW Level-1 wireless EV charging system for a 200V peak battery at 10A
-                and 50 kHz, analysing inductive power transfer, coil behaviour, and charging waveforms.
-            </p>
+            <p>Designed a 2 kW Level-1 wireless EV charger for a 200V peak battery at 10A and 50 kHz using inductive power transfer analysis.</p>
         </div>
 
         <div class="card">
             <h3>Methods for Analyzing Discrete-Time Systems</h3>
-            <p>
-                Analysed discrete-time systems using time-domain convolution, DFT-based frequency
-                analysis, and Z-transform methods to evaluate output sequences, stability, and
-                system response.
-            </p>
+            <p>Analysed systems using time-domain convolution, DFT-based frequency analysis, and Z-transform methods for output response and stability evaluation.</p>
         </div>
 
         <div class="card">
             <h3>Spectrum Analysis of LED and Tungsten Using Spectrophotometer</h3>
-            <p>
-                Performed spectrum analysis of LED and tungsten light sources using PASCO
-                spectrophotometer equipment, optical sensor alignment, and graphical data analysis
-                through PASCO software.
-            </p>
+            <p>Performed spectrum analysis of LED and tungsten sources using PASCO equipment, optical alignment, sensor calibration, and graphical data analysis.</p>
         </div>
 
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Professional Experience & Internship</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Technical Support Engineer — PTCL</h3>
+            <p><strong>Mar 2023 – Dec 2023 | Islamabad</strong></p>
+            <p>Configured and troubleshot IPTV, broadband, and telephony systems. Worked with Huawei NMS, Nokia AMS, and ZTE systems, supporting GPON, ADSL, and VDSL network technologies.</p>
+        </div>
+
+        <div class="card">
+            <h3>Internee Engineer — IESCO, KTM Grid Station</h3>
+            <p><strong>Aug 2021 – Sep 2021 | Rawalpindi</strong></p>
+            <p>Completed one-month internship at KTM Grid Station, gaining exposure to transformers, ring distribution systems, substation operations, safety procedures, and practical power distribution infrastructure.</p>
+        </div>
     </div>
 </section>
 
@@ -231,18 +285,17 @@ footer{
     <h2>Education</h2>
     <div class="grid">
         <div class="card">
-            <h3>MSc Electronics Engineering</h3>
-            <p>University of South Wales, UK</p>
+            <h3>MSc Electronics & Information Technology</h3>
+            <p>University of South Wales, UK — 2025</p>
         </div>
-
         <div class="card">
-            <h3>BSc Electrical Engineering</h3>
-            <p>COMSATS University Islamabad, Pakistan</p>
+            <h3>BEng Electrical Engineering</h3>
+            <p>COMSATS University Islamabad, Pakistan — 2022</p>
         </div>
     </div>
 </section>
 
-<section>
+<section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:ammar457926@gmail.com">ammar457926@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/engineer-ammar" target="_blank">linkedin.com/in/engineer-ammar</a></p>
@@ -252,6 +305,12 @@ footer{
 <footer>
     <p>© 2026 Ammar Hashim | Electronics Engineer</p>
 </footer>
+
+<script>
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
